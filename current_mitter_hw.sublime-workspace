@@ -1,0 +1,984 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"va",
+				"val_array\t(data_packet.h)"
+			],
+			[
+				"ad",
+				"adc_ref_val\t(data_packet.h)"
+			],
+			[
+				"spa",
+				"spacket"
+			],
+			[
+				"da",
+				"data_packet.h\t(data_packet.c)"
+			],
+			[
+				"ui",
+				"uint32_t"
+			],
+			[
+				"uin",
+				"uint16_t"
+			],
+			[
+				"ADC_I",
+				"ADC_InitStructure"
+			],
+			[
+				"AIN",
+				"AIN1\t(hal_adc.c)"
+			],
+			[
+				"ADC",
+				"ADC1"
+			],
+			[
+				"hal_u",
+				"hal_uart_dbg.h\t(hal.c)"
+			],
+			[
+				"inc",
+				"include"
+			],
+			[
+				"hal_",
+				"hal_ok"
+			],
+			[
+				"GPIO",
+				"GPIO_Pin"
+			],
+			[
+				"hal",
+				"hal.h\t(main.c)"
+			],
+			[
+				"re",
+				"return"
+			],
+			[
+				"si",
+				"sizeof\t(core_task_manager.c)"
+			],
+			[
+				"no",
+				"no_problems"
+			],
+			[
+				"te",
+				"test_func"
+			],
+			[
+				"str",
+				"struct\tstruct"
+			],
+			[
+				"ker",
+				"kernel.h\t(core_event_handlers.c)"
+			],
+			[
+				"x2",
+				"x2_val"
+			],
+			[
+				"tas",
+				"tasks"
+			],
+			[
+				"keve",
+				"k_event"
+			],
+			[
+				"ha",
+				"handler\t(kernel.h)"
+			],
+			[
+				"task",
+				"task_num"
+			],
+			[
+				"core_event_",
+				"core_event_manager.h\t(main.c)"
+			],
+			[
+				"so",
+				"sort_task"
+			],
+			[
+				"ts",
+				"task"
+			],
+			[
+				"core",
+				"core_task"
+			],
+			[
+				"pr",
+				"prior\t(kernel.h)"
+			],
+			[
+				"ta",
+				"task_hndl\t(kernel.h)"
+			],
+			[
+				"k",
+				"kcodes"
+			],
+			[
+				"core_eve",
+				"core_event_manager.h\t(core_event_manager.c)"
+			],
+			[
+				"in",
+				"include"
+			],
+			[
+				"OP",
+				"OPT"
+			],
+			[
+				"e",
+				"ev"
+			],
+			[
+				"p",
+				"priority"
+			],
+			[
+				"k_",
+				"k_event"
+			],
+			[
+				"is",
+				"is_hndl_in_list"
+			],
+			[
+				"uint",
+				"uint8_t"
+			],
+			[
+				"h",
+				"hndl"
+			],
+			[
+				"eve",
+				"event_query"
+			],
+			[
+				"q",
+				"query"
+			],
+			[
+				"ev",
+				"event_query"
+			],
+			[
+				"s",
+				"static"
+			],
+			[
+				"ma",
+				"max_events"
+			],
+			[
+				"core_set",
+				"core_set_lse"
+			],
+			[
+				"core_",
+				"core_idle\t(main.c)"
+			],
+			[
+				"SYS",
+				"SYSTICK_FREQ\t(kernel_configuration.h)"
+			],
+			[
+				"sd",
+				"stdint.h\t(kernel.h)"
+			],
+			[
+				"make",
+				"makefile"
+			],
+			[
+				"c",
+				"cmsis"
+			],
+			[
+				"M",
+				"MAKEFILE_INC"
+			],
+			[
+				"main",
+				"main.o\t(makefile)"
+			],
+			[
+				"CC",
+				"CCFLAGS"
+			],
+			[
+				"OB",
+				"OBJ"
+			],
+			[
+				"start",
+				"startup_stm32l1xx_md.s\t(makefile)"
+			],
+			[
+				"MA",
+				"makefile"
+			],
+			[
+				"mi",
+				"misc.h\t(misc.c)"
+			],
+			[
+				"a",
+				"A"
+			],
+			[
+				"for",
+				"format\tfunction"
+			],
+			[
+				"_",
+				"__name__"
+			],
+			[
+				"lo",
+				"log2\tstatement"
+			],
+			[
+				"l",
+				"logging"
+			],
+			[
+				"log",
+				"logging"
+			],
+			[
+				"n",
+				"next\tfunction"
+			],
+			[
+				"t",
+				"set_trace\tfunction"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "src/kernel/main.c",
+			"settings":
+			{
+				"buffer_size": 2589,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "inc/hal/hal_adc.h",
+			"settings":
+			{
+				"buffer_size": 916,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/kernel/data_packet.c",
+			"settings":
+			{
+				"buffer_size": 1303,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "inc/kernel/data_packet.h",
+			"settings":
+			{
+				"buffer_size": 1497,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/kernel/common_conf.h",
+			"settings":
+			{
+				"buffer_size": 839,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/hal/hal.c",
+			"settings":
+			{
+				"buffer_size": 1361,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/hal/hal_adc.c",
+			"settings":
+			{
+				"buffer_size": 5555,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "Packages/Makefile/Make.sublime-build",
+	"build_system_choices":
+	[
+		[
+			[
+				[
+					"Packages/Makefile/Make.sublime-build",
+					""
+				],
+				[
+					"Packages/Makefile/Make.sublime-build",
+					"Clean"
+				]
+			],
+			[
+				"Packages/Makefile/Make.sublime-build",
+				"Clean"
+			]
+		],
+		[
+			[
+				[
+					"Packages/Python/Python.sublime-build",
+					""
+				],
+				[
+					"Packages/Python/Python.sublime-build",
+					"Syntax Check"
+				]
+			],
+			[
+				"Packages/Python/Python.sublime-build",
+				"Syntax Check"
+			]
+		]
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 32.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"Package Control: ",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: inst",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: in",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: insta",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: i",
+				"Package Control: Install Package"
+			],
+			[
+				"mark ",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"git",
+				"Preferences: GitGutter Settings"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"ana",
+				"Anaconda: Enable linting on this file"
+			],
+			[
+				"anaconda: ",
+				"Anaconda: Disable linting on this file"
+			],
+			[
+				"Package Control: ins",
+				"Package Control: Install Package"
+			],
+			[
+				"pack",
+				"Preferences: Package Control Settings – User"
+			]
+		],
+		"width": 449.0
+	},
+	"console":
+	{
+		"height": 112.0,
+		"history":
+		[
+			"git",
+			"oleg(4)",
+			"print (a)",
+			"a=5",
+			"print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by) ",
+			"dh = hashlib.sha256(by).hexdigest()",
+			" dh = hashlib.sha256(by).hexdigest()",
+			"by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read()",
+			"urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) )",
+			"ipp = sublime.installed_packages_path()",
+			"pf = 'Package Control.sublime-package'",
+			"h = '6f4c264a24d933ce70df5dedcf1dcaee' + 'ebe013ee18cced0ef93d5f746d80ef60'",
+			"import urllib.request,os,hashlib",
+			"print ('oleg')",
+			"print (oleg)",
+			"import urllib.request,os,hashlib; h = '6f4c264a24d933ce70df5dedcf1dcaee' + 'ebe013ee18cced0ef93d5f746d80ef60'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by) ",
+			"reboot",
+			"import urllib.request,os,hashlib; h = '6f4c264a24d933ce70df5dedcf1dcaee' + 'ebe013ee18cced0ef93d5f746d80ef60'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/home/saurex/Документы/Current_mitter_hw",
+		"/home/saurex/Документы/Current_mitter_hw/docs",
+		"/home/saurex/Документы/Current_mitter_hw/inc",
+		"/home/saurex/Документы/Current_mitter_hw/inc/kernel",
+		"/home/saurex/Документы/Current_mitter_hw/src",
+		"/home/saurex/Документы/Current_mitter_hw/src/hal",
+		"/home/saurex/Документы/Current_mitter_hw/src/kernel",
+		"/home/saurex/Документы/Current_mitter_hw/stdperiph",
+		"/home/saurex/Документы/Current_mitter_hw/stdperiph/inc",
+		"/home/saurex/Документы/Current_mitter_hw/stdperiph/src"
+	],
+	"file_history":
+	[
+		"/opt/dsa/dsa-server/bin/dglux_server.dart",
+		"/opt/dsa/dsa-server/bin/daemon.dart",
+		"/home/saurex/Документы/Current_mitter_hw/src/kernel/makefile",
+		"/home/saurex/Документы/Current_mitter_hw/stdperiph/inc/stm32l1xx_adc.h",
+		"/home/saurex/Документы/Current_mitter_hw/stdperiph/src/stm32l1xx_tim.c",
+		"/home/saurex/Документы/Current_mitter_hw/stdperiph/inc/stm32l1xx_tim.h",
+		"/home/saurex/Документы/Current_mitter_hw/stdperiph/src/stm32l1xx_adc.c",
+		"/home/saurex/Документы/Current_mitter_hw/src/hal/hal_tim6.c",
+		"/home/saurex/Документы/Current_mitter_hw/inc/hal/hal_adc.h",
+		"/home/saurex/Документы/Current_mitter_hw/inc/hal/hal_tim6.h",
+		"/home/saurex/Документы/Current_mitter_hw/docs/kernel.md",
+		"/home/saurex/Документы/Current_mitter_hw/src/hal/makefile",
+		"/home/saurex/Документы/Current_mitter_hw/src/hal/hal_uart_dbg.c",
+		"/home/saurex/Документы/Current_mitter_hw/inc/hal/hal.h",
+		"/home/saurex/Документы/Current_mitter_hw/src/hal/hal.c",
+		"/home/saurex/Документы/Neos/docs/kernel.md",
+		"/home/saurex/Документы/Current_mitter_hw/inc/hal/hal_uart_dbg.h",
+		"/home/saurex/Документы/Current_mitter_hw/src/kernel/common_conf.h",
+		"/home/saurex/Документы/Current_mitter_hw/inc/hal/hal_configuration.h",
+		"/home/saurex/Документы/Neos/inc/kernel/kernel_panic.h",
+		"/home/saurex/Документы/Neos/inc/kernel/kcodes.h",
+		"/home/saurex/Документы/Neos/inc/kernel/kernel.h",
+		"/home/saurex/Документы/Neos/src/kernel/core_unit_tests.c",
+		"/home/saurex/Документы/Neos/src/hal/hal_lse.c",
+		"/home/saurex/Документы/Neos/makefile",
+		"/home/saurex/Документы/Neos/src/kernel/makefile",
+		"/home/saurex/Документы/Neos/inc/kernel/kernel_configuration.h",
+		"/home/saurex/Документы/Neos/src/kernel/main.c",
+		"/home/saurex/Документы/Neos/inc/kernel/core_unit_tests.h",
+		"/home/saurex/Документы/Neos/src/kernel/core_event_manager.c",
+		"/home/saurex/Документы/Neos/src/kernel/core_event_handlers.c",
+		"/home/saurex/Документы/Neos/src/kernel/core_task_manager.c",
+		"/home/saurex/Документы/Neos/src/hal/hal_idle.c",
+		"/home/saurex/Документы/Neos/src/kernel/kernel_panic.c",
+		"/home/saurex/.vmware/preferences",
+		"/run/user/1000/gvfs/smb-share:server=192.168.17.168,share=storage/Developments/Neocore/Cases/изменения_узла.md",
+		"/run/user/1000/gvfs/smb-share:server=192.168.17.168,share=storage/Admin/common_ssh_access/access_to_server_via_ssh.md",
+		"/etc/apt/sources.list",
+		"/home/saurex/.gdbinit",
+		"/home/saurex/Документы/Neos/src/app/sys",
+		"/home/saurex/Документы/Neos/src/hal/hal.c",
+		"/home/saurex/Документы/Neos/inc/kernel/core_event_manager.h",
+		"/home/saurex/Документы/Neos/src/kernel/core_scheulder.c",
+		"/home/saurex/Документы/Neos/src/hal/hal_sysclock.c",
+		"/home/saurex/Документы/Neos/inc/kernel/kevents.h",
+		"/home/saurex/Документы/Neos/inc/kernel/core_event_handlers.h",
+		"/home/saurex/Документы/Neos/inc/hal/hal_sysclock.h",
+		"/home/saurex/Документы/Neos/inc/hal/hal_lse.h",
+		"/home/saurex/Документы/Neos/inc/hal/hal_idle.h",
+		"/home/saurex/Документы/Neos/inc/hal/hal.h",
+		"/home/saurex/Документы/Neos/inc/kernel/event_handlers_list.h",
+		"/home/saurex/Документы/Neos/inc/kernel/core_task_manager.h",
+		"/home/saurex/Документы/Neos/inc/kernel/core_listeners.h",
+		"/home/saurex/Документы/Neos/inc/kernel/core_idle.h",
+		"/home/saurex/Документы/Neos/inc/hal/hal_configuration.h",
+		"/home/saurex/Документы/Neos/src/hal/makefile",
+		"/home/saurex/Документы/Neos/src/kernel/core_systick.c",
+		"/home/saurex/Документы/Neos/src/kernel/core_system.c",
+		"/home/saurex/Документы/Neos/inc/hal/hal.c",
+		"/home/saurex/Документы/Neos/src/kernel/core_idle.c",
+		"/home/saurex/Документы/Neos/src/kernel/core_modules.c",
+		"/home/saurex/Документы/Neos/src/kernel/core_listeners.c",
+		"/run/user/1000/gvfs/smb-share",
+		"/run/user/1000/gvfs/smb-share:server=192.168.17.168,share=storage/Developments/Neocore/dgLux/Installer/readme.md",
+		"/home/saurex/Документы/Neos/.gitignore",
+		"/home/saurex/Документы/Neos/cmsis/core_cm0.h",
+		"/home/saurex/Документы/Neos/stdperiph/inc/stm32l1xx_rcc.h",
+		"/home/saurex/Документы/Neos/stdperiph/src/stm32l1xx_rcc.c",
+		"/home/saurex/Документы/Neos/cmsis/stm32l1xx.h",
+		"/home/saurex/Документы/Neos/cmsis/system_stm32l1xx.c",
+		"/home/saurex/Документы/Neos/cmsis/makefile",
+		"/home/saurex/Документы/Neos/stdperiph/src/makefile",
+		"/home/saurex/Документы/Neos/src/kernel/tiny_printf.cxx",
+		"/home/saurex/Документы/Neos/inc/hal/makefile",
+		"/home/saurex/Документы/Neos/src/kernel/core_post_event.c",
+		"/home/saurex/Документы/Neos/src/kernel/core_system_start.c",
+		"/home/saurex/Документы/Neos/src/kernel/core_scheulder_loop.c",
+		"/home/saurex/Документы/Neos/src/kernel/core_modules_registration.c",
+		"/home/saurex/Документы/Neos/src/kernel/core_init.c",
+		"/home/saurex/Документы/Neos/startup/makefile",
+		"/home/saurex/Документы/Neos/makefile.qq",
+		"/home/saurex/Документы/Neos/stdperiph/src/stm32l1xx_lcd.c",
+		"/home/saurex/Документы/Neos/stdperiph/src/misc.c",
+		"/home/saurex/Документы/Neos/stdperiph/src/stm32l1xx_adc.c",
+		"/home/saurex/Документы/Neos/src/kernel/sss.c",
+		"/home/saurex/Документы/Neos/stdperiph/inc/misc.h",
+		"/home/saurex/Документы/Neos/ld-scripts/stm32_flash.ld",
+		"/home/saurex/Документы/Neos/src/main.c",
+		"/home/saurex/Документы/Neos/src/main.d",
+		"/home/saurex/Документы/Neos/src/main.o",
+		"/home/saurex/Документы/Neos/startup/startup_stm32f10x_md_vl.s",
+		"/home/saurex/Документы/Neos/template.elf",
+		"/home/saurex/Документы/Neos/template.hex",
+		"/home/saurex/Документы/Neos/as.list",
+		"/home/saurex/Документы/Neos/ld-scripts/stm32f100rb.ld",
+		"/home/saurex/Документы/Neos/src/kernel/makefile.rules",
+		"/home/saurex/Документы/Neos/src/makefile.rules",
+		"/home/saurex/Документы/tests/Neocore/WebApi/main.py",
+		"/home/saurex/Документы/tests/Neocore/WebApi/second.py",
+		"/home/saurex/Документы/DCC Job/raspberrypi conf/static ip config.md",
+		"/run/user/1000/gvfs/smb-share:server=192.168.17.168,share=storage,user=pvp/Admin/samba/users.md",
+		"/run/user/1000/gvfs/smb-share:server=192.168.17.168,share=storage/Admin/openvpn/issued_certificates/KIV/readme.md",
+		"/run/user/1000/gvfs/smb-share:server=192.168.17.168,share=storage/Admin/openvpn/ovpn_howto/certificates_issue.md",
+		"/run/user/1000/gvfs/smb-share:server=192.168.17.168,share=storage/Admin/samba/users.md",
+		"/run/user/1000/gvfs/smb-share:server=10.0.0.1,share=share/documents/Job/DCC/dgLux projects/api postgress/postgress api",
+		"/home/saurex/Документы/tests/Neocore/WebApi/read.md",
+		"/home/saurex/.config/sublime-text-3/Packages/User/Side Bar.sublime-settings",
+		"/home/saurex/.config/sublime-text-3/Packages/SideBarEnhancements/Side Bar.sublime-settings",
+		"/home/saurex/.config/sublime-text-3/Packages/User/MultiMarkdown.sublime-settings",
+		"/home/saurex/Документы/DCC Job/Cases/Node/Case/Node/readme.txt",
+		"/home/saurex/Документы/DCC Job/Cases/Node/Case/gate/readme.txt",
+		"/usr/lib/python3.5/logging/__init__.py",
+		"/home/saurex/Документы/tests/Neocore/WebApi/WebApi.sublime-project",
+		"/home/saurex/Документы/DCC Job/tmp/tempinterp/test.sublime-project",
+		"/home/saurex/Документы/DCC Job/tmp/tempinterp/test2.py",
+		"/home/saurex/.config/sublime-text-3/Packages/Anaconda/Anaconda.sublime-settings",
+		"/home/saurex/.config/sublime-text-3/Packages/User/Anaconda.sublime-settings",
+		"/home/saurex/.vimrc",
+		"/home/saurex/Документы/DCC Job/tmp/tempinterp/import os.py",
+		"/home/saurex/.config/sublime-text-3/Packages/User/Package Control.sublime-settings"
+	],
+	"find":
+	{
+		"height": 41.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"invalidLicense",
+			"license",
+			"lecen",
+			"none",
+			"return",
+			"licen",
+			"period",
+			"ext",
+			"ADC_external_trigger_sources_for_regular_channels_conversion",
+			"ADC_InitStructure",
+			"start",
+			"ADC_ExternalTrigConv_None",
+			"trig",
+			"ADCCLK",
+			"RCC_ADCCLKConfig",
+			"RCC_PCLK2_Div6",
+			"                                     ",
+			"void",
+			"core_system_start",
+			"-O0",
+			".o",
+			".c",
+			"MEMORY\n{\n  rom : org = 0x08000000, l = 64K\n  ram : org = 0x20000000, l = 20K\n}\n\nSECTIONS\n{\n  .text : {\n    *(.text);\n  } > rom\n\n  .data : {\n    *(.data);\n  } > ram AT>rom = 0xff\n}",
+			">>>"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"none",
+			"core_set_sysclock",
+			"-O2",
+			".o = -O0",
+			".o",
+			""
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "src/kernel/main.c",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2589,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1866,
+								1866
+							]
+						],
+						"settings":
+						{
+							"git_gutter_is_enabled": false,
+							"markdonw_live_preview_last_run": 1554709760.09,
+							"spell_check": false,
+							"syntax": "Packages/C++/C.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 874.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "inc/hal/hal_adc.h",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 916,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								667,
+								667
+							]
+						],
+						"settings":
+						{
+							"git_gutter_is_enabled": false,
+							"markdonw_live_preview_last_run": 1554916053.77,
+							"syntax": "Packages/C++/C++.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "src/kernel/data_packet.c",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1303,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1002,
+								1002
+							]
+						],
+						"settings":
+						{
+							"git_gutter_is_enabled": false,
+							"markdonw_live_preview_last_run": 1554911627.58,
+							"open_with_edit": true,
+							"syntax": "Packages/C++/C.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 57.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "inc/kernel/data_packet.h",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1497,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1434,
+								1434
+							]
+						],
+						"settings":
+						{
+							"git_gutter_is_enabled": false,
+							"markdonw_live_preview_last_run": 1554911632.61,
+							"open_with_edit": true,
+							"syntax": "Packages/C++/C++.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 228.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "src/kernel/common_conf.h",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 839,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								649,
+								649
+							]
+						],
+						"settings":
+						{
+							"git_gutter_is_enabled": false,
+							"markdonw_live_preview_last_run": 1554912388.34,
+							"syntax": "Packages/C++/C++.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "src/hal/hal.c",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1361,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								828,
+								828
+							]
+						],
+						"settings":
+						{
+							"git_gutter_is_enabled": false,
+							"markdonw_live_preview_last_run": 1554906856.85,
+							"syntax": "Packages/C++/C.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "src/hal/hal_adc.c",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5555,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2590,
+								2590
+							]
+						],
+						"settings":
+						{
+							"git_gutter_is_enabled": false,
+							"markdonw_live_preview_last_run": 1554715382.66,
+							"open_with_edit": true,
+							"syntax": "Packages/C++/C.sublime-syntax",
+							"wrap_width": 100
+						},
+						"translation.x": 0.0,
+						"translation.y": 1311.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 28.0
+	},
+	"input":
+	{
+		"height": 46.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 103.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.mdpopups":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "Packages/Makefile/Make.sublime-build",
+	"project": "current_mitter_hw.sublime-project",
+	"replace":
+	{
+		"height": 73.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": false,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 268.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

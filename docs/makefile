@@ -1,0 +1,12 @@
+main.o = -O2
+core_system.o = -O2
+core_modules.o = -O2
+core_event_manager.o = -O2
+core_task_manager.o = -O2
+core_scheulder.o = -O2
+core_systick.o = -O2
+core_idle.o = -O2
+core_listeners.o = -O2
+core_event_handlers.o = -O2
+kernel_panic.o = -O2
+core_unit_tests.o = -O2

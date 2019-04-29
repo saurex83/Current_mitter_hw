@@ -1,0 +1,1 @@
+system_stm32l1xx.o = -O2

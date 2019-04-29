@@ -1,0 +1,5 @@
+hal.o = -O2
+hal_sysclock.o = -O2
+hal_adc.o = -O2
+hal_uart_dbg.o = -O2
+hal_tim6.o = -O2
