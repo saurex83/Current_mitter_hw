@@ -11,10 +11,7 @@
  Компания:    ООО "ДиСиСи"                                                 
  mail:        pvp@dcconsult.ru 
  ********************************************************************************/
-
-
 #include "kernel/data_packet.h"
-
 
 void sPacket_init(sPacket *packet)
 {
@@ -22,7 +19,6 @@ void sPacket_init(sPacket *packet)
     packet->config.period_us = ADC_PERIOD_US;
     packet->config.val_count = COUNT_OF_DISCRETS;
 }
-
 
 // Расчитывает CRC32 всего пакета и размещает в заголовке
 void sPacket_calc_crc32(sPacket *packet)

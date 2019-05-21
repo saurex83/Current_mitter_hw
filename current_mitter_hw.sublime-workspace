@@ -4,6 +4,18 @@
 		"selected_items":
 		[
 			[
+				"de",
+				"define"
+			],
+			[
+				"st",
+				"static"
+			],
+			[
+				"sp",
+				"spacket"
+			],
+			[
 				"va",
 				"val_array\t(data_packet.h)"
 			],
@@ -279,25 +291,7 @@
 			"file": "src/kernel/main.c",
 			"settings":
 			{
-				"buffer_size": 2589,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "inc/hal/hal_adc.h",
-			"settings":
-			{
-				"buffer_size": 916,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/kernel/data_packet.c",
-			"settings":
-			{
-				"buffer_size": 1303,
+				"buffer_size": 2642,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -312,19 +306,28 @@
 			}
 		},
 		{
-			"file": "src/kernel/common_conf.h",
+			"file": "src/hal/hal_uart_sys.c",
 			"settings":
 			{
-				"buffer_size": 839,
+				"buffer_size": 3093,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "src/hal/hal.c",
+			"file": "src/kernel/data_packet.c",
 			"settings":
 			{
-				"buffer_size": 1361,
+				"buffer_size": 1299,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/hal/hal_gpio.c",
+			"settings":
+			{
+				"buffer_size": 1723,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -333,9 +336,61 @@
 			"file": "src/hal/hal_adc.c",
 			"settings":
 			{
-				"buffer_size": 5555,
+				"buffer_size": 4479,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/hal/hal.c",
+			"settings":
+			{
+				"buffer_size": 1460,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/hal/hal_uart_dbg.c",
+			"settings":
+			{
+				"buffer_size": 3186,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "inc/hal/hal_gpio.h",
+			"settings":
+			{
+				"buffer_size": 1172,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "    \n\n\n\n\n    ADC_StructInit(&ADC_InitStructure);\n    ADC_InitStructure.ADC_Resolution = ADC_Resolution_12b;\n    ADC_InitStructure.ADC_ScanConvMode = DISABLE;       // Выбираем одноканальный режим работы\n    ADC_InitStructure.ADC_ContinuousConvMode = DISABLE;  // Выбираем однократный режим преобразования\n    ADC_InitStructure.ADC_ExternalTrigConvEdge = ADC_ExternalTrigConvEdge_None; //Не используем тригер запуска\n    ADC_InitStructure.ADC_DataAlign = ADC_DataAlign_Right;\n    ADC_InitStructure.ADC_NbrOfConversion = 1; \n    ADC_Init(ADC1, &ADC_InitStructure);\n\n    //* ADC1 regular  configuration */\n    ADC_RegularChannelConfig(ADC1, ADC_Channel_5, 1, ADC_SampleTime_96Cycles);    ",
+			"settings":
+			{
+				"buffer_size": 685,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "docs/prog and debug.md",
+			"settings":
+			{
+				"buffer_size": 602,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "stdperiph/src/stm32l1xx_adc.c",
+			"settings":
+			{
+				"buffer_size": 73051,
+				"line_ending": "Windows"
 			}
 		}
 	],
@@ -355,7 +410,7 @@
 			],
 			[
 				"Packages/Makefile/Make.sublime-build",
-				"Clean"
+				""
 			]
 		],
 		[
@@ -473,19 +528,37 @@
 	},
 	"expanded_folders":
 	[
-		"/home/saurex/Документы/Current_mitter_hw",
-		"/home/saurex/Документы/Current_mitter_hw/docs",
-		"/home/saurex/Документы/Current_mitter_hw/inc",
-		"/home/saurex/Документы/Current_mitter_hw/inc/kernel",
-		"/home/saurex/Документы/Current_mitter_hw/src",
-		"/home/saurex/Документы/Current_mitter_hw/src/hal",
-		"/home/saurex/Документы/Current_mitter_hw/src/kernel",
-		"/home/saurex/Документы/Current_mitter_hw/stdperiph",
-		"/home/saurex/Документы/Current_mitter_hw/stdperiph/inc",
-		"/home/saurex/Документы/Current_mitter_hw/stdperiph/src"
+		"/home/saurex/Projects/Current_mitter_hw",
+		"/home/saurex/Projects/Current_mitter_hw/docs",
+		"/home/saurex/Projects/Current_mitter_hw/inc",
+		"/home/saurex/Projects/Current_mitter_hw/inc/hal",
+		"/home/saurex/Projects/Current_mitter_hw/inc/kernel",
+		"/home/saurex/Projects/Current_mitter_hw/src",
+		"/home/saurex/Projects/Current_mitter_hw/src/hal",
+		"/home/saurex/Projects/Current_mitter_hw/src/kernel"
 	],
 	"file_history":
 	[
+		"/home/saurex/Projects/Current_mitter_hw/stdperiph/src/stm32l1xx_gpio.c",
+		"/home/saurex/Projects/Current_mitter_hw/stdperiph/inc/stm32l1xx_gpio.h",
+		"/home/saurex/Projects/Current_mitter_hw/makefile",
+		"/home/saurex/Projects/Current_mitter_hw/inc/hal/hal_gpio.h",
+		"/home/saurex/Projects/Current_mitter_hw/src/hal/hal_gpio.c",
+		"/home/saurex/Projects/Current_mitter_hw/src/hal/makefile",
+		"/home/saurex/Projects/Current_mitter_hw/src/hal/hal_adc.c",
+		"/home/saurex/Projects/Current_mitter_hw/stdperiph/inc/stm32l1xx_adc.h",
+		"/home/saurex/Projects/Current_mitter_hw/stdperiph/src/stm32l1xx_adc.c",
+		"/home/saurex/Projects/Current_mitter_hw/inc/hal/hal_adc.h",
+		"/home/saurex/Projects/Current_mitter_hw/src/kernel/data_packet.c",
+		"/home/saurex/Projects/Current_mitter_hw/docs/prog and debug.md",
+		"/home/saurex/Projects/Current_mitter_hw/inc/hal/hal_uart_sys.h",
+		"/home/saurex/Projects/Current_mitter_hw/src/hal/hal_uart_sys.c",
+		"/home/saurex/Projects/Current_mitter_hw/src/hal/hal.c",
+		"/home/saurex/Projects/Current_mitter_hw/inc/kernel/data_packet.h",
+		"/home/saurex/Projects/Current_mitter_hw/stdperiph/inc/stm32l1xx_rcc.h",
+		"/run/user/1000/gvfs/smb-share:server=192.168.17.168,share=storage/Developments/Neocore/Cases/изменения_узла.md",
+		"/run/user/1000/gvfs/smb-share:server=192.168.17.168,share=storage/Developments/Neocore/NeocoreCurrentMeter/шифро",
+		"/home/saurex/Projects/Current_mitter_hw/src/kernel/common_conf.h",
 		"/opt/dsa/dsa-server/bin/dglux_server.dart",
 		"/opt/dsa/dsa-server/bin/daemon.dart",
 		"/home/saurex/Документы/Current_mitter_hw/src/kernel/makefile",
@@ -521,7 +594,6 @@
 		"/home/saurex/Документы/Neos/src/hal/hal_idle.c",
 		"/home/saurex/Документы/Neos/src/kernel/kernel_panic.c",
 		"/home/saurex/.vmware/preferences",
-		"/run/user/1000/gvfs/smb-share:server=192.168.17.168,share=storage/Developments/Neocore/Cases/изменения_узла.md",
 		"/run/user/1000/gvfs/smb-share:server=192.168.17.168,share=storage/Admin/common_ssh_access/access_to_server_via_ssh.md",
 		"/etc/apt/sources.list",
 		"/home/saurex/.gdbinit",
@@ -594,22 +666,11 @@
 		"/home/saurex/Документы/tests/Neocore/WebApi/read.md",
 		"/home/saurex/.config/sublime-text-3/Packages/User/Side Bar.sublime-settings",
 		"/home/saurex/.config/sublime-text-3/Packages/SideBarEnhancements/Side Bar.sublime-settings",
-		"/home/saurex/.config/sublime-text-3/Packages/User/MultiMarkdown.sublime-settings",
-		"/home/saurex/Документы/DCC Job/Cases/Node/Case/Node/readme.txt",
-		"/home/saurex/Документы/DCC Job/Cases/Node/Case/gate/readme.txt",
-		"/usr/lib/python3.5/logging/__init__.py",
-		"/home/saurex/Документы/tests/Neocore/WebApi/WebApi.sublime-project",
-		"/home/saurex/Документы/DCC Job/tmp/tempinterp/test.sublime-project",
-		"/home/saurex/Документы/DCC Job/tmp/tempinterp/test2.py",
-		"/home/saurex/.config/sublime-text-3/Packages/Anaconda/Anaconda.sublime-settings",
-		"/home/saurex/.config/sublime-text-3/Packages/User/Anaconda.sublime-settings",
-		"/home/saurex/.vimrc",
-		"/home/saurex/Документы/DCC Job/tmp/tempinterp/import os.py",
-		"/home/saurex/.config/sublime-text-3/Packages/User/Package Control.sublime-settings"
+		"/home/saurex/.config/sublime-text-3/Packages/User/MultiMarkdown.sublime-settings"
 	],
 	"find":
 	{
-		"height": 41.0
+		"height": 40.0
 	},
 	"find_in_files":
 	{
@@ -623,6 +684,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"GPIO_Mode_AN",
 			"invalidLicense",
 			"license",
 			"lecen",
@@ -679,26 +741,34 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2589,
+						"buffer_size": 2642,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1866,
-								1866
+								1818,
+								1818
 							]
 						],
 						"settings":
 						{
+							"SL.14.region_keys":
+							[
+							],
+							"SL.38.region_keys":
+							[
+							],
 							"git_gutter_is_enabled": false,
 							"markdonw_live_preview_last_run": 1554709760.09,
 							"spell_check": false,
-							"syntax": "Packages/C++/C.sublime-syntax"
+							"syntax": "Packages/C++/C.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 874.0,
+						"translation.y": 510.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
@@ -706,67 +776,6 @@
 				},
 				{
 					"buffer": 1,
-					"file": "inc/hal/hal_adc.h",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 916,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								667,
-								667
-							]
-						],
-						"settings":
-						{
-							"git_gutter_is_enabled": false,
-							"markdonw_live_preview_last_run": 1554916053.77,
-							"syntax": "Packages/C++/C++.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "src/kernel/data_packet.c",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1303,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1002,
-								1002
-							]
-						],
-						"settings":
-						{
-							"git_gutter_is_enabled": false,
-							"markdonw_live_preview_last_run": 1554911627.58,
-							"open_with_edit": true,
-							"syntax": "Packages/C++/C.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 57.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
 					"file": "inc/kernel/data_packet.h",
 					"semi_transient": false,
 					"settings":
@@ -778,114 +787,358 @@
 						"selection":
 						[
 							[
-								1434,
-								1434
+								1406,
+								1406
 							]
 						],
 						"settings":
 						{
-							"git_gutter_is_enabled": false,
-							"markdonw_live_preview_last_run": 1554911632.61,
-							"open_with_edit": true,
-							"syntax": "Packages/C++/C++.sublime-syntax"
+							"SL.87.region_keys":
+							[
+							],
+							"syntax": "Packages/C++/C++.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 228.0,
+						"translation.y": 376.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
-					"buffer": 4,
-					"file": "src/kernel/common_conf.h",
+					"buffer": 2,
+					"file": "src/hal/hal_uart_sys.c",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 839,
+						"buffer_size": 3093,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								649,
-								649
+								1529,
+								1529
 							]
 						],
 						"settings":
 						{
-							"git_gutter_is_enabled": false,
-							"markdonw_live_preview_last_run": 1554912388.34,
-							"syntax": "Packages/C++/C++.sublime-syntax"
+							"SL.86.region_keys":
+							[
+							],
+							"syntax": "Packages/C++/C.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 308.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 3,
 					"type": "text"
 				},
 				{
-					"buffer": 5,
-					"file": "src/hal/hal.c",
+					"buffer": 3,
+					"file": "src/kernel/data_packet.c",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1361,
+						"buffer_size": 1299,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								828,
-								828
+								0,
+								0
 							]
 						],
 						"settings":
 						{
-							"git_gutter_is_enabled": false,
-							"markdonw_live_preview_last_run": 1554906856.85,
-							"syntax": "Packages/C++/C.sublime-syntax"
+							"SL.15.region_keys":
+							[
+							],
+							"SL.99.region_keys":
+							[
+							],
+							"syntax": "Packages/C++/C.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "src/hal/hal_gpio.c",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1723,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1235,
+								1235
+							]
+						],
+						"settings":
+						{
+							"SL.41.region_keys":
+							[
+							],
+							"syntax": "Packages/C++/C.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 459.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 6,
 					"type": "text"
 				},
 				{
-					"buffer": 6,
+					"buffer": 5,
 					"file": "src/hal/hal_adc.c",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 5555,
+						"buffer_size": 4479,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2590,
-								2590
+								3397,
+								3397
 							]
 						],
 						"settings":
 						{
-							"git_gutter_is_enabled": false,
-							"markdonw_live_preview_last_run": 1554715382.66,
-							"open_with_edit": true,
+							"SL.81.region_keys":
+							[
+							],
 							"syntax": "Packages/C++/C.sublime-syntax",
-							"wrap_width": 100
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1311.0,
+						"translation.y": 1428.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "src/hal/hal.c",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1460,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								527,
+								527
+							]
+						],
+						"settings":
+						{
+							"SL.82.region_keys":
+							[
+							],
+							"syntax": "Packages/C++/C.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "src/hal/hal_uart_dbg.c",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 3186,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								818,
+								818
+							]
+						],
+						"settings":
+						{
+							"SL.83.region_keys":
+							[
+							],
+							"syntax": "Packages/C++/C.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 408.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "inc/hal/hal_gpio.h",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1172,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								966,
+								966
+							]
+						],
+						"settings":
+						{
+							"SL.53.region_keys":
+							[
+							],
+							"syntax": "Packages/C++/C++.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 102.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 9,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 685,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								13,
+								13
+							]
+						],
+						"settings":
+						{
+							"SL.101.region_keys":
+							[
+							],
+							"SL.18.region_keys":
+							[
+							],
+							"syntax": "Packages/C++/C.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 10,
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "docs/prog and debug.md",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 602,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								367,
+								367
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Markdown/Markdown.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 9,
+					"type": "text"
+				},
+				{
+					"buffer": 11,
+					"file": "stdperiph/src/stm32l1xx_adc.c",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 73051,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								11716,
+								11716
+							]
+						],
+						"settings":
+						{
+							"SL.120.region_keys":
+							[
+							],
+							"SL.19.region_keys":
+							[
+							],
+							"history_list_is_closing": true,
+							"syntax": "Packages/C++/C.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 4429.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 11,
 					"type": "text"
 				}
 			]
@@ -893,7 +1146,7 @@
 	],
 	"incremental_find":
 	{
-		"height": 28.0
+		"height": 26.0
 	},
 	"input":
 	{
@@ -908,11 +1161,18 @@
 				0,
 				1,
 				1
+			],
+			[
+				1,
+				0,
+				2,
+				1
 			]
 		],
 		"cols":
 		[
 			0.0,
+			0.519258291323,
 			1.0
 		],
 		"rows":
@@ -922,9 +1182,13 @@
 		]
 	},
 	"menu_visible": true,
+	"output.SublimeLinter":
+	{
+		"height": 0.0
+	},
 	"output.exec":
 	{
-		"height": 103.0
+		"height": 104.0
 	},
 	"output.find_results":
 	{
@@ -938,7 +1202,7 @@
 	"project": "current_mitter_hw.sublime-project",
 	"replace":
 	{
-		"height": 73.0
+		"height": 48.0
 	},
 	"save_all_on_build": true,
 	"select_file":

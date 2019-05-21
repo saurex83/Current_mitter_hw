@@ -1,4 +1,4 @@
-/********************************************************************************
+/*******************************************************************************
  Слой аппаратных абстракций.
 
 
@@ -9,10 +9,12 @@
  Версия:      0.1                                                          
  Компания:    ООО "ДиСиСи"                                                 
  mail:        pvp@dcconsult.ru 
- ********************************************************************************/
+ ******************************************************************************/
 
 #include "hal/hal.h"
 #include "hal/hal_uart_dbg.h"
+#include "hal/hal_uart_sys.h"
+#include "hal/hal_gpio.h"
 #include "hal/hal_adc.h"
 #include "hal/hal_tim6.h"
 
@@ -20,8 +22,10 @@
 hal_retcode hal_init(void)
 {
     hal_uart_dbg_init();
+    hal_uart_sys_init();
     hal_tim6_init();    
     hal_adc_init();
+    hal_gpio_init();
     return hal_ok;
 }
 

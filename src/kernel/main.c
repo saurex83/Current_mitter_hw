@@ -1,10 +1,10 @@
-/********************************************************************************
+/*******************************************************************************
  
 Программа производит измерения трех выходов с токовых трансформаторов и выдачу
 данных в канал uart. 
 Данные выдаются в сыром виде в отсчетах АЦП 12 бит с правым выравниванием. 
 Предварительную калибровку АЦП микроконтролер проводит по внешнему опорному 
-источнику. Измерения представляют собой осцилограмму модуля тока.
+источнику. Измерения представляют собой осцилограмму тока.
 Частота дискретизации фиксированная.
  
 Программа работает в цикличном режиме:
@@ -26,12 +26,13 @@
  Версия:      0.1                                                          
  Компания:    ООО "ДиСиСи"                                                 
  mail:        pvp@dcconsult.ru 
- ********************************************************************************/
+ ******************************************************************************/
 
 #include "common_conf.h"
 #include "hal/hal_sysclock.h"
 #include "hal/hal.h"
 #include "hal/hal_uart_dbg.h"
+#include "hal/hal_uart_sys.h"
 #include "hal/hal_adc.h"
 #include "kernel/data_packet.h"
 
@@ -47,17 +48,17 @@ int main(void)
     while (true)
     {
         measure_circle(AIN1);
-        measure_circle(AIN2);
-        measure_circle(AIN3);
+        measure_circle(AIN1);
+        measure_circle(AIN1);
     }
 
     while (true)
     {
-        hal_uart_dbg_put_char('O');
-        hal_uart_dbg_put_char('L');
-        hal_uart_dbg_put_char('E');
-        hal_uart_dbg_put_char('G');
-        hal_uart_dbg_put_char('\n');
+        hal_uart_sys_put_char('O');
+        hal_uart_sys_put_char('L');
+        hal_uart_sys_put_char('E');
+        hal_uart_sys_put_char('G');
+        hal_uart_sys_put_char('\n');
     }
 
     while (true);
@@ -77,6 +78,7 @@ void measure_circle(uint8_t ch)
     // Измеряем значение vref 
     hal_adc_vref(&spacket.config.adc_ref_val);
 
+    spacket.config.channel = ch;
     // Захватываем поток данных
     hal_adc_cont_measurment(spacket.data.val_array, COUNT_OF_DISCRETS, ch, ADC_PERIOD_US);
 
@@ -84,5 +86,5 @@ void measure_circle(uint8_t ch)
     sPacket_calc_crc32(&spacket);
 
     // Выгружаем данные в последовательный интерфейс
-    hal_uart_dbg_send_array(p_sPacket, sizeof(sPacket));
+    hal_uart_sys_send_array(p_sPacket, sizeof(sPacket));
 }

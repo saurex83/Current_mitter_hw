@@ -85,6 +85,7 @@ LDSCRIPT   = stm32_flash.ld
 #-------------------------------------------------------------------------------
 LDFLAGS += -nostartfiles
 LDFLAGS += -mthumb 
+LDFLAGS += -Wl,--gc-sections   # /Не линкуем неиспользуемый код и данные
 LDFLAGS += -L$(LDSCR_PATH)
 LDFLAGS += -T$(LDSCR_PATH)/$(LDSCRIPT)
 LDFLAGS += $(addprefix -L, $(LIBPATH))
