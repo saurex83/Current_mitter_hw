@@ -20,20 +20,24 @@ void sPacket_init(sPacket *packet)
     packet->config.val_count = COUNT_OF_DISCRETS;
 }
 
+// Вот не понял сам зачем название crc32 в uint16 и байтовое xor?
+// Это результат моей тупости, но поправлять сейчас не буду
 // Расчитывает CRC32 всего пакета и размещает в заголовке
-void sPacket_calc_crc32(sPacket *packet)
+void sPacket_calc_xor8(sPacket *packet)
 {
     // При подсчете CRC учитывается только секция config и data
     uint16_t sz = sizeof(s_conf) + sizeof(s_data);
     
     uint8_t *ptr = (uint8_t*)&(packet->config); 
 
-    uint32_t crc32 = 0;
+    uint8_t xor8 = 0;
 
     while ( sz > 0 )
     {
-        crc32 ^= *ptr;
+        xor8 ^= *ptr;
         ptr++;
         sz--;
     }
+
+    packet->head.xor8 = xor8;
 }

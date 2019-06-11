@@ -48,20 +48,9 @@ int main(void)
     while (true)
     {
         measure_circle(AIN1);
-        measure_circle(AIN1);
-        measure_circle(AIN1);
+        measure_circle(AIN2);
+        measure_circle(AIN3);
     }
-
-    while (true)
-    {
-        hal_uart_sys_put_char('O');
-        hal_uart_sys_put_char('L');
-        hal_uart_sys_put_char('E');
-        hal_uart_sys_put_char('G');
-        hal_uart_sys_put_char('\n');
-    }
-
-    while (true);
 
 	return 0;
 }
@@ -78,12 +67,20 @@ void measure_circle(uint8_t ch)
     // Измеряем значение vref 
     hal_adc_vref(&spacket.config.adc_ref_val);
 
-    spacket.config.channel = ch;
+    // Преобразуем номера каналов АЦП к порядковым номерам каналов
+    // Программа на RPI не должна знать о каналах АЦП
+    if (ch == AIN1)
+        spacket.config.channel = 0;
+    else if (ch == AIN2)
+        spacket.config.channel = 1;
+    else if (ch == AIN3)
+        spacket.config.channel = 2;
+
     // Захватываем поток данных
     hal_adc_cont_measurment(spacket.data.val_array, COUNT_OF_DISCRETS, ch, ADC_PERIOD_US);
 
-    // Расчитываем CRC32
-    sPacket_calc_crc32(&spacket);
+    // Расчитываем xor8
+    sPacket_calc_xor8(&spacket);
 
     // Выгружаем данные в последовательный интерфейс
     hal_uart_sys_send_array(p_sPacket, sizeof(sPacket));

@@ -22,9 +22,10 @@
 
 typedef struct 
 {
-    uint32_t crc32; 
+    uint8_t xor8; 
 } s_head ;
 
+#pragma pack(1)
 typedef struct 
 { 
     float       REF;        // Абсолютное значение опорного напряжения в вольтах.
@@ -39,6 +40,7 @@ typedef struct
     uint16_t    val_array[COUNT_OF_DISCRETS]; // Массив измеренных данных
 } s_data ;
 
+#pragma pack(1)
 typedef struct 
 {
     s_head head;
@@ -48,6 +50,6 @@ typedef struct
 
 
 void sPacket_init(sPacket *packet);
-void sPacket_calc_crc32(sPacket *packet);
+void sPacket_calc_xor8(sPacket *packet);
 
 
