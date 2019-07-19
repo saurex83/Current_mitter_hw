@@ -11,6 +11,7 @@
 #pragma once
 
 #include <stm32l1xx_adc.h>
+#include "kernel/data_packet.h"
 #include "hal/hal.h"
 
 #define AIN1    ADC_Channel_0
@@ -20,3 +21,4 @@
 hal_retcode hal_adc_init(void);
 hal_retcode hal_adc_vref(uint16_t *val);
 hal_retcode hal_adc_cont_measurment(uint16_t *buf, uint16_t size, uint8_t ch, uint16_t usec);
+hal_retcode hal_adc_scan_measurment(sPacket* spacket, uint16_t size,uint16_t usec);

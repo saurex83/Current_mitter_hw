@@ -36,27 +36,23 @@
 #include "hal/hal_adc.h"
 #include "kernel/data_packet.h"
 
-void measure_circle(uint8_t ch);
+void measure_circle(void);
 
 int main(void)
 {
-
-
     hal_start_sysclock();
     hal_init();
 
     while (true)
     {
-        measure_circle(AIN1);
-        measure_circle(AIN2);
-        measure_circle(AIN3);
+        measure_circle();
     }
 
 	return 0;
 }
 
 
-void measure_circle(uint8_t ch)
+void measure_circle(void)
 {
     sPacket spacket;
     char *p_sPacket = (char*)&spacket;
@@ -67,18 +63,9 @@ void measure_circle(uint8_t ch)
     // Измеряем значение vref 
     hal_adc_vref(&spacket.config.adc_ref_val);
 
-    // Преобразуем номера каналов АЦП к порядковым номерам каналов
-    // Программа на RPI не должна знать о каналах АЦП
-    if (ch == AIN1)
-        spacket.config.channel = 0;
-    else if (ch == AIN2)
-        spacket.config.channel = 1;
-    else if (ch == AIN3)
-        spacket.config.channel = 2;
-
     // Захватываем поток данных
-    hal_adc_cont_measurment(spacket.data.val_array, COUNT_OF_DISCRETS, ch, ADC_PERIOD_US);
-
+   // hal_adc_cont_measurment(spacket.data.val_array, COUNT_OF_DISCRETS, ch, ADC_PERIOD_US);
+    hal_adc_scan_measurment(&spacket, COUNT_OF_DISCRETS, ADC_PERIOD_US);
     // Расчитываем xor8
     sPacket_calc_xor8(&spacket);
 

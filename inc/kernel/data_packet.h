@@ -27,25 +27,26 @@ typedef struct
 
 #pragma pack(1)
 typedef struct 
+{
+    uint8_t channel;
+    uint16_t avr_value;
+    uint16_t max_value; 
+} s_chData;
+
+#pragma pack(1)
+typedef struct 
 { 
-    float       REF;        // Абсолютное значение опорного напряжения в вольтах.
-    uint16_t    adc_ref_val;// Измеренное значение оп. напр. АЦП.
-    uint8_t     channel;    // Номер канала с которого произведены измерения
-    uint16_t    period_us;  // Период дискретизации в мкс
-    uint16_t    val_count;  // Количество измерений
+    float REF;        // Абсолютное значение опорного напряжения в вольтах.
+    uint16_t adc_ref_val;// Измеренное значение оп. напр. АЦП.
 } s_conf ;
 
-typedef struct 
-{
-    uint16_t    val_array[COUNT_OF_DISCRETS]; // Массив измеренных данных
-} s_data ;
 
 #pragma pack(1)
 typedef struct 
 {
     s_head head;
     s_conf config;
-    s_data data;
+    s_chData data[3];    // Данные измерения
 } sPacket;
 
 

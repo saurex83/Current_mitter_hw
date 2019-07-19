@@ -16,8 +16,6 @@
 void sPacket_init(sPacket *packet)
 {
     packet->config.REF = REF_VOLT;
-    packet->config.period_us = ADC_PERIOD_US;
-    packet->config.val_count = COUNT_OF_DISCRETS;
 }
 
 // Вот не понял сам зачем название crc32 в uint16 и байтовое xor?
@@ -26,7 +24,7 @@ void sPacket_init(sPacket *packet)
 void sPacket_calc_xor8(sPacket *packet)
 {
     // При подсчете CRC учитывается только секция config и data
-    uint16_t sz = sizeof(s_conf) + sizeof(s_data);
+    uint16_t sz = sizeof(sPacket) - sizeof(s_head);
     
     uint8_t *ptr = (uint8_t*)&(packet->config); 
 

@@ -1,2 +1,2 @@
-main.o = -O2
-data_packet.c = -O2
+main.o = -O0
+data_packet.c = -O0

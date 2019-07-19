@@ -35,6 +35,8 @@
  ******************************************************************************/
 
 #include <stm32l1xx_adc.h>
+#include <misc.h>
+#include <stm32l1xx_dma.h>
 #include <stm32l1xx_rcc.h>
 #include <stm32l1xx_gpio.h>
 #include "hal/hal.h"
@@ -42,13 +44,18 @@
 #include "hal/hal_adc.h"
 #include "hal/hal_gpio.h"
 
+
 #define SAMPLE_TIME ADC_SampleTime_96Cycles 
 #define ADCR        ADC_Channel_8 // Канал ИОН
-#define ADCRank     1   //Ранг канала
-
+#define ADCRank1     1       //Ранг канала
+#define ADCRank2     2       //Ранг канала
+#define ADCRank3     3       //Ранг канала
 
 static inline hal_retcode adc_init(void);
 static inline hal_retcode adc_gpio_cfg(void);
+static void adc_dma_enable(uint16_t *buf, uint16_t buf_size);
+static void adc_dma_disable(void);
+
 
 
 hal_retcode hal_adc_init(void)
@@ -66,7 +73,7 @@ hal_retcode hal_adc_vref(uint16_t *val)
     ADC_IS.ADC_ExternalTrigConvEdge = ADC_ExternalTrigConvEdge_None; 
     ADC_Init(ADC1, &ADC_IS);
 
-    ADC_RegularChannelConfig(ADC1, ADCR, ADCRank, SAMPLE_TIME); 
+    ADC_RegularChannelConfig(ADC1, ADCR, ADCRank1, SAMPLE_TIME); 
 
     ADC_Cmd(ADC1, ENABLE);
     while (ADC_GetFlagStatus(ADC1, ADC_FLAG_ADONS) == RESET);
@@ -80,16 +87,126 @@ hal_retcode hal_adc_vref(uint16_t *val)
     return (hal_ok);
 }
 
+//Проводим count измерений на группе каналов AIN1-3, с интервалом usec 
+hal_retcode hal_adc_scan_measurment(sPacket* spacket, uint16_t size,uint16_t usec)
+{
+    ADC_InitTypeDef ADC_IS;
+    ADC_StructInit(&ADC_IS);
+  //  ADC_IS.ADC_ExternalTrigConvEdge = ADC_ExternalTrigConvEdge_None; 
+    ADC_IS.ADC_ExternalTrigConvEdge = ADC_ExternalTrigConvEdge_Rising; 
+    ADC_IS.ADC_ExternalTrigConv = ADC_ExternalTrigConv_T6_TRGO;
+    ADC_IS.ADC_NbrOfConversion = 3;
+    ADC_IS.ADC_ScanConvMode = ENABLE; 
+    ADC_IS.ADC_ContinuousConvMode = DISABLE;
+    ADC_Init(ADC1, &ADC_IS); 
+
+    // Настраиваем регулярные каналы АЦП и указываем их ранг измерений
+    ADC_RegularChannelConfig(ADC1, AIN1, ADCRank1, SAMPLE_TIME); 
+    ADC_RegularChannelConfig(ADC1, AIN2, ADCRank2, SAMPLE_TIME); 
+    ADC_RegularChannelConfig(ADC1, AIN3, ADCRank3, SAMPLE_TIME); 
+
+
+    ADC_DMACmd(ADC1, ENABLE);
+    ADC_Cmd(ADC1, ENABLE);
+
+    // Устанавливаем период дискретизации
+    hal_tim6_set(usec);
+
+    uint16_t adcData[3] = {10,10,10};
+    uint32_t avrAdc[3] = {0,0,0};
+    uint16_t maxAdc[3] = {0,0,0};
+    uint16_t d_size = size;
+
+    /* Полезная информация при работе с DMA 
+        12.11 Data management and overrun detection
+        Относиться к команде:
+        ADC_DMARequestAfterLastTransferCmd(ADC1, ENABLE);
+        АЦП перестает посылать запросы по завершения scan всех регулярок.
+        Команда разрешает посылать запросы после scan. 
+    */
+
+    ADC_DMARequestAfterLastTransferCmd(ADC1, ENABLE);
+    
+
+    adc_dma_enable(adcData, 3);
+
+    while (ADC_GetFlagStatus(ADC1, ADC_FLAG_ADONS) == RESET);
+
+    // Цикл измерения
+    hal_tim6_start();
+
+    while (size > 0)
+    {
+        while (DMA_GetFlagStatus(DMA1_FLAG_TC1) == RESET);
+        
+        DMA_ClearFlag(DMA1_FLAG_TC1);
+      //  DMA_ClearFlag( DMA1_FLAG_GL1 );
+    //    DMA_ClearITPendingBit( DMA1_IT_GL1 );
+     //   ADC_ClearFlag(ADC1, ADC_FLAG_EOC);
+        size--;
+
+       // TODO для отладки подергать ногу
+        hal_gpioState(pinTP_All, pulse);
+
+        for (uint8_t i=0;i<3;i++)
+        {
+            avrAdc[i] += adcData[i];
+            if (adcData[i] > maxAdc[i])
+                maxAdc[i] = adcData[i];
+        }
+    }
+    
+    hal_tim6_stop();
+
+    ADC_Cmd(ADC1, DISABLE);
+    adc_dma_disable();
+
+    for (uint8_t i = 0; i < 3; i++)
+    {
+        spacket->data[i].channel = (i+1); // Сразу приводим к каналам 1,2,3
+        spacket->data[i].avr_value = avrAdc[i] / d_size;
+        spacket->data[i].max_value = maxAdc[i];
+    }
+    return (hal_ok);
+}
+
+
+static void adc_dma_disable(void)
+{
+    DMA_Cmd(DMA1_Channel1, DISABLE);
+    ADC_DMACmd(ADC1, DISABLE);
+}
+
+static void adc_dma_enable(uint16_t *buf, uint16_t buf_size)
+{
+    RCC_AHBPeriphClockCmd(RCC_AHBPeriph_DMA1, ENABLE);
+    DMA_InitTypeDef DMA_InitStructure;
+    //==Configure DMA1 - Channel1==
+    DMA_DeInit(DMA1_Channel1); 
+    DMA_InitStructure.DMA_PeripheralBaseAddr = (uint32_t)&(ADC1->DR); 
+    DMA_InitStructure.DMA_MemoryBaseAddr = (uint32_t) buf; 
+    DMA_InitStructure.DMA_DIR = DMA_DIR_PeripheralSRC;
+    DMA_InitStructure.DMA_BufferSize = buf_size;
+    DMA_InitStructure.DMA_PeripheralInc = DMA_PeripheralInc_Disable;
+    DMA_InitStructure.DMA_MemoryInc = DMA_MemoryInc_Enable;
+    DMA_InitStructure.DMA_PeripheralDataSize = DMA_PeripheralDataSize_HalfWord;
+    DMA_InitStructure.DMA_MemoryDataSize = DMA_MemoryDataSize_HalfWord;
+    DMA_InitStructure.DMA_Mode = DMA_Mode_Circular;
+    DMA_InitStructure.DMA_Priority = DMA_Priority_High;
+    DMA_InitStructure.DMA_M2M = DMA_M2M_Disable;
+    DMA_Init(DMA1_Channel1, &DMA_InitStructure);
+    DMA_Cmd(DMA1_Channel1, ENABLE);
+}
+
 hal_retcode hal_adc_cont_measurment(uint16_t *buf, uint16_t size, uint8_t ch, uint16_t usec) 
 {
-
     ADC_InitTypeDef ADC_IS;
     ADC_StructInit(&ADC_IS);
     ADC_IS.ADC_ExternalTrigConvEdge = ADC_ExternalTrigConvEdge_Rising; 
     ADC_IS.ADC_ExternalTrigConv = ADC_ExternalTrigConv_T6_TRGO;
     ADC_Init(ADC1, &ADC_IS);
 
-    ADC_RegularChannelConfig(ADC1, ch, ADCRank, SAMPLE_TIME); 
+    ADC_RegularChannelConfig(ADC1, ch, ADCRank1, SAMPLE_TIME); 
 
     // Устанавливаем период дискретизации
     hal_tim6_set(usec);
