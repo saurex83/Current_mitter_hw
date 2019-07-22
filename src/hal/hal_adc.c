@@ -5,7 +5,6 @@
   - AIN1 (вывод PA1)
   - AIN4 (вывод PB9) 
 
-
  Основная частота аналогового сигнала 50 Гц, период 20мс.
  Ширину спектра прийму равной 1 кГц.
  Частота дискретизации 2 кГц. Перод дискретизации сигнала 500мкс.
@@ -56,8 +55,6 @@ static inline hal_retcode adc_gpio_cfg(void);
 static void adc_dma_enable(uint16_t *buf, uint16_t buf_size);
 static void adc_dma_disable(void);
 
-
-
 hal_retcode hal_adc_init(void)
 {
     adc_gpio_cfg();
@@ -92,7 +89,6 @@ hal_retcode hal_adc_scan_measurment(sPacket* spacket, uint16_t size,uint16_t use
 {
     ADC_InitTypeDef ADC_IS;
     ADC_StructInit(&ADC_IS);
-  //  ADC_IS.ADC_ExternalTrigConvEdge = ADC_ExternalTrigConvEdge_None; 
     ADC_IS.ADC_ExternalTrigConvEdge = ADC_ExternalTrigConvEdge_Rising; 
     ADC_IS.ADC_ExternalTrigConv = ADC_ExternalTrigConv_T6_TRGO;
     ADC_IS.ADC_NbrOfConversion = 3;
@@ -105,16 +101,15 @@ hal_retcode hal_adc_scan_measurment(sPacket* spacket, uint16_t size,uint16_t use
     ADC_RegularChannelConfig(ADC1, AIN2, ADCRank2, SAMPLE_TIME); 
     ADC_RegularChannelConfig(ADC1, AIN3, ADCRank3, SAMPLE_TIME); 
 
-
     ADC_DMACmd(ADC1, ENABLE);
     ADC_Cmd(ADC1, ENABLE);
 
     // Устанавливаем период дискретизации
     hal_tim6_set(usec);
 
-    uint16_t adcData[3] = {10,10,10};
-    uint32_t avrAdc[3] = {0,0,0};
-    uint16_t maxAdc[3] = {0,0,0};
+    uint16_t adcData[3] = {10,10,10}; // измеренные значения из каналов
+    uint32_t avrAdc[3] = {0,0,0}; // Расчетные среднии значения
+    uint16_t maxAdc[3] = {0,0,0}; // Пиковые значения тока
     uint16_t d_size = size;
 
     /* Полезная информация при работе с DMA 
@@ -160,6 +155,17 @@ hal_retcode hal_adc_scan_measurment(sPacket* spacket, uint16_t size,uint16_t use
 
     ADC_Cmd(ADC1, DISABLE);
     adc_dma_disable();
+
+    /* Из за импульсного источника питания появляются всплески напряжения
+    Они не превышают 3х младших разрядов АЦП и на среднее значение тока не 
+    влияют. Вляют на максимальное значение. Поэтому все максимальные значения
+    ниже 3х разрядом приравниваю к 0, что бы не было вопросов. 
+    */
+    for (uint8_t i = 0; i < 3; i++)
+    {
+        if (maxAdc[i] < 10)
+            maxAdc[i] = 0;
+    }
 
     for (uint8_t i = 0; i < 3; i++)
     {
